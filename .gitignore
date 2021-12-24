@@ -1,9 +1,9 @@
-node_modules/
+/node_modules/
 README.md
-environment/
+/files/
 package.json
 package-lock.json
-handlers/
-app-routes.js
-app.js
+.js
+index.js
 .gitignore
+.env
