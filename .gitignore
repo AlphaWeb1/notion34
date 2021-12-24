@@ -3,7 +3,7 @@ README.md
 /files/
 package.json
 package-lock.json
-.js
+#.js
 index.js
 .gitignore
 .env
