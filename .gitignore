@@ -4,9 +4,6 @@ README.md
 /public/template/images/
 package.json
 package-lock.json
-#.js
-#index.js
-#index.html
 amplify.yml
-.gitignore
+# .gitignore
 .env
