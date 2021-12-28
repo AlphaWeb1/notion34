@@ -1,11 +1,9 @@
 /node_modules/
 README.md
 /files/
+/public/template/images/
 package.json
 package-lock.json
-#.js
-index.js
-index.html
 amplify.yml
 .gitignore
 .env
