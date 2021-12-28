@@ -1,0 +1,11 @@
+/node_modules/
+README.md
+/files/
+package.json
+package-lock.json
+#.js
+index.js
+index.html
+amplify.yml
+.gitignore
+.env
