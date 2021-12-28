@@ -1,0 +1,64 @@
+
+      .app{
+        content: "";
+        width: 100%;
+        height: 100vh;
+        /* min-height: 675px; */
+        display: flex;
+        flex-direction: row-reverse;
+        background: url(./public/images/backgrounds/coming-soon-bg.jpg);
+        justify-content: end;
+        padding: 5rem 4rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .notice-section{
+        width: 48%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      img.logo-notice {
+        height: 9vh;
+      }
+      .img-wrapper {
+        width: 100%;
+        margin: 1rem;
+      }
+      .notice-title h2 {
+        color: #f59e17;
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 32px;
+        margin-bottom: 2rem;
+      }
+      .notice-title>h4 {
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+      }
+      .timer {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-direction: row;
+        margin: 2rem 0rem;
+        color: #ffffff;
+        text-align: center;
+      }
+      .timer>div {
+        padding: 0.5rem;
+        border: #a2a2a2 solid 1px;
+        margin: 0rem 1rem;
+        width: 86px;
+      }
+      @media (max-width: 1024px){
+        .notice-section{
+            width: 100%;
+        }
+        .app{
+            padding: 1rem 0.7rem;
+        }
+    }

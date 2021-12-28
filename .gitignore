@@ -4,8 +4,8 @@ README.md
 package.json
 package-lock.json
 #.js
-index.js
-index.html
+#index.js
+#index.html
 amplify.yml
 .gitignore
 .env
