@@ -5,5 +5,5 @@ README.md
 package.json
 package-lock.json
 amplify.yml
-.gitignore
+# .gitignore
 .env
