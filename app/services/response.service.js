@@ -17,3 +17,12 @@ exports.failed = (res, code, error = null, errors = {}, template = null) => {
         return res.render(template, errors);
     }
 }
+
+exports.redirect = (res, message = null, code = 301, success = true, data = {}, url = null) => {
+    console.log('[:] Response Called', res.headers.render);
+    if (res.headers.render == 'json') {
+        return res.status(code).json({code, success, message, data});
+    } else {
+        return res.redirect(url, data);
+    }
+}
