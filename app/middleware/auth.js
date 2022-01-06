@@ -1,7 +1,7 @@
-const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken"),
+    {response} = require("../services");
 
 exports.authorize = (req, res, next) => {
-    // console.log('Headers', req.headers);
     let token = req.body.token || req.query.token || req.headers["x-access-token"] || req.headers["authorization"];
 
     if (!token) {
@@ -18,8 +18,7 @@ exports.authorize = (req, res, next) => {
 
         req.token = token;
         req.user = decoded;
-        // console.log('Authorization Passed! User:', res.user);
-    } catch (error) {-
+    } catch (error) {
         console.log('[!] Authorization Failed:', error.message);
         return res.status(401).json({code: 401, error: 'Authoirization Failed', message: 'Invalid Token.'});
     }

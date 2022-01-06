@@ -1,15 +1,15 @@
-const //CheckToken = require('./check-token'),
+const Token = require('./token'),
     Authorize =  require('./auth'),
     Web =  require('./web'),
     API =  require('./api'),
-    // Verified =  require('./verified'),
+    Verified =  require('./verified'),
     ErrorHandler =  require('./handlers');
 
 module.exports = {
     Web,
     API,
-    // CheckToken,
+    Token,
     Authorize,
-    // Verified,
+    Verified,
     ErrorHandler
 }

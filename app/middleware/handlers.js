@@ -1,31 +1,21 @@
 const express = require('express');
-const errors = express.Router();
+const errors = express.Router(),
+{response} = require('../services');
 
+// 500 error
 const error500 = ( err, req, res, next) => {
-    console.log(err.stack);
-    res.status(500).send({
-        code : 500,
-        error: 'Server Error.',
-        message: 'Something went wrong'
-    });
+    console.log('[!] Error:', err.stack);
+    return response.failed(res, 500, `Server Error`, ['Something went wrong'], 'errors/500');
 }
 
 // 404 error
 const error404 = ( req, res, next) => {
-    res.status(404).send({
-        code : 404,
-        error: 'Resource not found',
-        message: 'Resource not found'
-    });
+    return response.failed(res, 404, `Request Error`, ['Resource not found'], 'errors/404');
 };
 
 // 403 error
 const error403 = ( req, res, next) => {
-    res.status(403).send({
-        code : 403,
-        error: 'Forbidden request',
-        message: 'Forbidden request'
-    });
+    return response.failed(res, 403, `Request Error`, ['Forbidden request'], 'errors/403');
 };
 
 errors.use(error500);

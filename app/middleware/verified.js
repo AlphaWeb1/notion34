@@ -1,5 +1,6 @@
-const { verify } = require('jsonwebtoken');
-const User = require('../models/user');
+const { verify } = require('jsonwebtoken'),
+    User = require('../models/user'),
+    {response} = require("../services");
 
 exports.verified = (req, res, next) => {
     // console.log('Headers', req.headers);
@@ -7,7 +8,7 @@ exports.verified = (req, res, next) => {
 
     if (!token) {
         console.log('[!] Token Validation Failed!', 'A toking is required for authentication.');
-        return res.status(403).send({code: 403, error: 'Token Validation Failed', message: 'Warning! A toking is required for authentication.'});
+        return response.failed(res, 403, `Token Validation Error`, ['Token is required for authentication'], 'auth/login');
     }
 
     try {
@@ -24,20 +25,20 @@ exports.verified = (req, res, next) => {
             if (data) {
                 req.user = data;
                 if (!data?.email_verified_at || data?.email_verified_at == null) {
-                    return res.status(403).send({ code: 403, message: 'User Not verified', error: 'Invalid User.', errors: ['User not verified'] });
+                    return response.failed(res, 403, `Autorization Error`, ['User not verified'], 'user/dashboard');
                 }
                 return next();
             }
             if (error){
                 console.log('[!] User Error @Verify Middleware:', error);
-                return res.status(500).send({code: 500, error: error.message ?? error, message: 'Oops! Something went wrong.'});
+                return response.failed(res, 500, `Server Error`, [error.message ?? error], 'auth/login');
             }
             if (!error && !data)
-            console.log('[!] User Does not exist @Verify Middleware:');
-                return res.status(403).send({ code: 403, message: 'User Validation Failed', error: 'Invalid User.', errors: ['User Does not exist'] });
+                console.log('[!] User Does not exist @Verify Middleware:');
+                return response.failed(res, 403, `User Validation Error`, ['User Does not exist'], 'auth/register');
         });
     } catch (error) {
         console.log('[!] User Validation Failed:', error);
-        return res.status(403).send({code: 401, error: 'User Validation Failed', message: 'Invalid User.'});
+        return response.failed(res, 401, `User Validation Error`, ['Invalid User'], 'auth/register');
     }
 };
