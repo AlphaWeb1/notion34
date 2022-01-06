@@ -10,13 +10,16 @@ router.get(`/home`, middlewares.Web.handle, controller.guest.homeController.home
 
 router.get(`/categories`, middlewares.Web.handle, controller.guest.categoryController.index);
 router.get(`/categories/:category`, middlewares.Web.handle, controller.guest.categoryController.category);
-// files all, files by category, file detail
+
+router.get(`/files`, middlewares.Web.handle, controller.guest.fileController.index);
+router.get(`/files/:category`, middlewares.Web.handle, controller.guest.fileController.categoryFiles);
+router.get(`/file/:id`, middlewares.Web.handle, controller.guest.fileController.file);
 
 /* auth route*/
 router.get(`/login`, middlewares.Web.handle, controller.auth.loginController.index);
 router.post(`/login`, middlewares.Web.handle, validator.auth.login.loginBasic, controller.auth.loginController.authenticate);
 
-router.get(`/login`, middlewares.Web.handle, controller.auth.registerController.index);
+router.get(`/register`, middlewares.Web.handle, controller.auth.registerController.index);
 router.post(`/register`, middlewares.Web.handle, validator.auth.register.registerBasic, controller.auth.registerController.register);
 
 module.exports = router;

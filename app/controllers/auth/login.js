@@ -1,9 +1,9 @@
-const {response} = require("../../services");
 const bcrypt = require('bcryptjs'),
     jwt = require('jsonwebtoken'),
     User = require('../../models/user'),
     Token = require('../../models/token'),
     dayjs = require('dayjs'),
+    {response} = require("../../services"),
     {validationResult} = require ('express-validator');
 
 exports.index = (req, res) => {
@@ -46,7 +46,7 @@ exports.authenticate = (req, res) => {
                         }, {
                             upsert: true
                         }).then(data => {
-                            return response.redirect(res, 200, true, `Server say's Login is successful`, { userInfo, token: tokenData }, '/client/dashboard');
+                            return response.redirect(res, `Server say's Login is successful`, 200, true, { userInfo, token: tokenData }, '/user/dashboard');
                         })
                         .catch(error => {
                             console.log('[!] Server Error: ', error);
