@@ -9,25 +9,41 @@ html(lang='en')
     link(rel="stylesheet" href="/css/css.css")
   body
     div(class="app")
-      div(class="notice-section")
-        div(class="img-wrapper text-center")
-          img(src="public/images/logos/svg/Notion_white.svg" alt="Notion THIRTYFOUR" class="logo-notice")
-        div(class="notice-title")
-          h2 Something amazing is coming
-          h4 We are almost there! Signup to findout when it's ready
-        div(class="timer")
-          div(class="days")
-            h3 
-            h6(cladss="label") Days
-          div(class="hours")
-            h3 
-            h6(cladss="label") Hours
-          div(class="minutes")
-            h3 
-            h6(cladss="label") Minutes
-          div(class="seconds")
-            h3 
-            h6(cladss="label") Seconds
+      div(class="header bg-secondary")
+        div(class="header-main bg-white p-3")
+          nav(class="navbar navbar-expand-lg navbar-light bg-white")
+            div(class="container-fluid justify-content-center")
+              a(class="navbar-brand d-none" href="#") Notion Thirty Four
+              button(class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuDropDown" 
+                aria-controls="menuDropDown" aria-expanded="false" aria-label="Toggle navigation")
+                span(class="navbar-toggler-icon")
+              div(class="collapse justify-content-center navbar-collapse" id="menuDropDown")
+                ul(class="navbar-nav")
+                  li(class="nav-item mx-3")
+                    a(class="nav-link active" aria-current="page" href="#") Home
+                  li(class="nav-item mx-3")
+                    a(class="nav-link" href="#") About
+                  li(class="nav-item mx-3")
+                    a(class="nav-link" href="#") Gallery
+                  li(class="nav-item mx-3")
+                    a(class="nav-link" href="#") Contact
+                  li(class="nav-item dropdown d-none")
+                    a(class="nav-link dropdown-toggle" href="#" id="menuDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false")
+                      | Dropdown link
+                    ul(class="dropdown-menu" aria-labelledby="menuDropdownLink")
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+        div(class="header-base bg-white-transparent px-5 pb-3 pt-1")
+          img(src="/public/images/logos/png/Notion_White.png" style="width: 10rem;")
+      div(class="bg-images home-banner")
+      div(class="main d-flex flex-column")
+        div(class="portfolio d-flex flex-column justify-content-center")
+          h3(class="titled-1 text-center text-uppercase") Portfolio
+          p(class="paragraph-1")
+            | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis dolorum odit dolorem blanditiis earum aperiam eos eveniet.
+        div(class="features")
+        
     script(src="/public/assets/jquery/jquery.min.js")
     script(src="/public/assets/bootstrap/js/bootstrap.min.js")
     script(src="/js/js.js")
