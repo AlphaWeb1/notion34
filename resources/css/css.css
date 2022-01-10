@@ -1,64 +1,109 @@
+.app{
+  content: "";
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow-y: auto;
+  overflow-x: unset;
+  flex-direction: column;
+  color:  #0000;
+  font-size: 1.3rem;
+}
 
-      .app{
-        content: "";
-        width: 100%;
-        height: 100vh;
-        /* min-height: 675px; */
-        display: flex;
-        flex-direction: row-reverse;
-        background: url(./public/images/backgrounds/coming-soon-bg.jpg);
-        justify-content: end;
-        padding: 5rem 4rem;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-      .notice-section{
-        width: 48%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-      }
-      img.logo-notice {
-        height: 9vh;
-      }
-      .img-wrapper {
-        width: 100%;
-        margin: 1rem;
-      }
-      .notice-title h2 {
-        color: #f59e17;
-        text-align: center;
-        font-weight: 700;
-        letter-spacing: 2px;
-        font-size: 32px;
-        margin-bottom: 2rem;
-      }
-      .notice-title>h4 {
-        color: #fff;
-        text-align: center;
-        font-size: 16px;
-      }
-      .timer {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        flex-direction: row;
-        margin: 2rem 0rem;
-        color: #ffffff;
-        text-align: center;
-      }
-      .timer>div {
-        padding: 0.5rem;
-        border: #a2a2a2 solid 1px;
-        margin: 0rem 1rem;
-        width: 86px;
-      }
-      @media (max-width: 1024px){
-        .notice-section{
-            width: 100%;
-        }
-        .app{
-            padding: 1rem 0.7rem;
-        }
-    }
+.header {
+  padding: 0rem 0rem 1rem 0rem;
+  z-index: 20;
+  background: #f59e1775!important;
+  font-size: 1.3rem;
+  /* position: sticky; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.header .nav-link {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.header-base img {
+  padding: 0.5rem 0rem 0rem;
+}
+
+.bg-images{
+  min-height: 65vh;
+  max-height: 75vh;
+  z-index: 1;
+  background: url(/public/images/backgrounds/coming-soon-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  content: "";
+}
+
+.app .main{
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
+  overflow-x: unset;
+  color: #000000;
+}
+.main .portfolio h3.titled-1 {
+  text-align: center !important;
+  margin-top: 2.5rem;
+  text-transform: uppercase;
+}
+.main .portfolio .paragraph-1 {
+  padding: 0rem 22%;
+}
+
+.notice-section{
+  width: 48%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+img.logo-notice {
+  height: 9vh;
+}
+.img-wrapper {
+  width: 100%;
+  margin: 1rem;
+}
+.notice-title h2 {
+  color: #f59e17;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 32px;
+  margin-bottom: 2rem;
+}
+.notice-title>h4 {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+}
+.timer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: row;
+  margin: 2rem 0rem;
+  color: #ffffff;
+  text-align: center;
+}
+.timer>div {
+  padding: 0.5rem;
+  border: #a2a2a2 solid 1px;
+  margin: 0rem 1rem;
+  width: 86px;
+}
+@media (max-width: 1024px){
+  .notice-section{
+      width: 100%;
+  }
+  .app{
+      padding: 1rem 0.7rem;
+  }
+}
