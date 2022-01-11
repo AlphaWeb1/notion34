@@ -31,18 +31,149 @@ html(lang='en')
                     a(class="nav-link dropdown-toggle" href="#" id="menuDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false")
                       | Dropdown link
                     ul(class="dropdown-menu" aria-labelledby="menuDropdownLink")
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-        div(class="header-base bg-white-transparent px-5 pb-3 pt-1")
-          img(src="/public/images/logos/png/Notion_White.png" style="width: 10rem;")
+                      li
+                        a(class="dropdown-item" href="#") Action
+                      li
+                        a(class="dropdown-item" href="#") Another action
+                      li
+                        a(class="dropdown-item" href="#") Something else here
+        div(class="header-base bg-white-transparent px-5 py-1")
+          img(src="/public/images/logos/logo.png")
       div(class="bg-images home-banner")
       div(class="main d-flex flex-column")
-        div(class="portfolio d-flex flex-column justify-content-center")
+        div(class="portfolio d-flex flex-column justify-content-center mb-3")
           h3(class="titled-1 text-center text-uppercase") Portfolio
           p(class="paragraph-1")
             | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis dolorum odit dolorem blanditiis earum aperiam eos eveniet.
-        div(class="features")
+        div(class="features mb-3 pt-3")
+          ul(class="nav nav-pills justify-content-center mb-3" id="pills-tab" role="tablist")
+            li(class="nav-item" role="presentation")
+              button(class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all"
+              type="button" role="tab" aria-controls="pills-all" aria-selected="true") All
+            li(class="nav-item" role="presentation")
+              button(class="nav-link" id="pills-nude-tab" data-bs-toggle="pill" data-bs-target="#pills-nude" 
+              type="button" role="tab" aria-controls="pills-nude" aria-selected="false") Nude
+            li(class="nav-item" role="presentation")
+              button(class="nav-link" id="pills-stilllife-tab" data-bs-toggle="pill" data-bs-target="#pills-stilllife" 
+              type="button" role="tab" aria-controls="pills-stilllife" aria-selected="false") Still life
+            li(class="nav-item" role="presentation")
+              button(class="nav-link" id="pills-headshot-tab" data-bs-toggle="pill" data-bs-target="#pills-headshot" 
+              type="button" role="tab" aria-controls="pills-headshot" aria-selected="false") Headshot
+            li(class="nav-item" role="presentation")
+              button(class="nav-link" id="pills-products-tab" data-bs-toggle="pill" data-bs-target="#pills-products" 
+              type="button" role="tab" aria-controls="pills-products" aria-selected="false") Products
+          div(class="tab-content" id="pills-tabContent")
+            div(class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab")
+              <!-- All List -->
+              <div class="row portfolio-list">						
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">						
+                  <div class="portfolio-detail">
+                    <i><img src="/public/template/images/home-2-portfolio-1.jpg" alt="Gallery" /></i>
+                    <div class="portfolio-content">
+                      <a href="single-work.html">Work Title Goes 
+                      right here</a>
+                      <a href="/public/template/images/home-2-portfolio-1.jpg" class="zoom" title="Work Title Goes right here"><i class="fa fa-search"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">						
+                  <div class="portfolio-detail">
+                    <i><img src="/public/template/images/home-2-portfolio-2.jpg" alt="Gallery" /></i>
+                    <div class="portfolio-content">
+                      <a href="single-work.html">Work Title Goes 
+                      right here</a>
+                      <a href="/public/template/images/home-2-portfolio-2.jpg" class="zoom" title="Work Title Goes right here"><i class="fa fa-search"></i></a>
+                    </div>
+                  </div>						
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                  <div class="portfolio-detail">
+                    <i><img src="/public/template/images/home-2-portfolio-3.jpg" alt="Gallery" /></i>
+                    <div class="portfolio-content">
+                      <a href="single-work.html">Work Title Goes 
+                      right here</a>
+                      <a href="/public/template/images/home-2-portfolio-3.jpg" class="zoom" title="Work Title Goes right here"><i class="fa fa-search"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                  <div class="portfolio-detail">
+                    <i><img src="/public/template/images/home-2-portfolio-4.jpg" alt="Gallery" /></i>
+                    <div class="portfolio-content">
+                      <a href="single-work.html">Work Title Goes 
+                      right here</a>
+                      <a href="/public/template/images/home-2-portfolio-4.jpg" class="zoom" title="Work Title Goes right here"><i class="fa fa-search"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                  <div class="portfolio-detail">
+                    <i><img src="/public/template/images/home-2-portfolio-5.jpg" alt="Gallery" /></i>
+                    <div class="portfolio-content">
+                      <a href="single-work.html">Work Title Goes 
+                      right here</a>
+                      <a href="/public/template/images/home-2-portfolio-5.jpg" class="zoom" title="Work Title Goes right here"><i class="fa fa-search"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                  <div class="portfolio-detail">
+                    <i><img src="/public/template/images/home-2-portfolio-6.jpg" alt="Gallery" /></i>
+                    <div class="portfolio-content">
+                      <a href="single-work.html">Work Title Goes 
+                      right here</a>
+                      <a href="/public/template/images/home-2-portfolio-6.jpg" class="zoom" title="Work Title Goes right here"><i class="fa fa-search"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                  <div class="portfolio-detail">
+                    <i><img src="/public/template/images/home-2-portfolio-7.jpg" alt="Gallery" /></i>
+                    <div class="portfolio-content">
+                      <a href="single-work.html">Work Title Goes 
+                      right here</a>
+                      <a href="/public/template/images/home-2-portfolio-7.jpg" class="zoom" title="Work Title Goes right here"><i class="fa fa-search"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                  <div class="portfolio-detail">
+                    <i><img src="/public/template/images/home-2-portfolio-8.jpg" alt="Gallery" /></i>
+                    <div class="portfolio-content">
+                      <a href="single-work.html">Work Title Goes 
+                      right here</a>
+                      <a href="/public/template/images/home-2-portfolio-8.jpg" class="zoom" title="Work Title Goes right here"><i class="fa fa-search"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                  <div class="portfolio-detail">
+                    <i><img src="/public/template/images/home-2-portfolio-9.jpg" alt="Gallery" /></i>
+                    <div class="portfolio-content">
+                      <a href="single-work.html">Work Title Goes 
+                      right here</a>
+                      <a href="/public/template/images/home-2-portfolio-9.jpg" class="zoom" title="Work Title Goes right here"><i class="fa fa-search"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- Row -->
+            div(class="tab-pane fade" id="pills-nude" role="tabpanel" aria-labelledby="pills-nude-tab")
+              | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem exercitationem, iusto harum vero 
+              | numquam magni laborum facilis aliquam doloribus delectus, aut vitae perferendis minima alias voluptate corporis.
+            div(class="tab-pane fade" id="pills-stilllife" role="tabpanel" aria-labelledby="pills-stilllife-tab")
+              | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem exercitationem, iusto harum vero 
+              | numquam magni laborum facilis aliquam doloribus delectus, aut vitae perferendis minima alias.
+            div(class="tab-pane fade" id="pills-headshot" role="tabpanel" aria-labelledby="pills-headshot-tab")
+              | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem exercitationem, iusto harum vero 
+              | numquam magni laborum facilis aliquam doloribus delectus, aut vitae perferendis minima.
+            div(class="tab-pane fade" id="pills-products" role="tabpanel" aria-labelledby="pills-products-tab")
+              | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem exercitationem, iusto harum vero 
+              | numquam magni laborum facilis aliquam doloribus delectus, aut vitae.
+        div(class="categories mb-3 pt-3")
+          div(class="row category-list")
+            div(class="col-xs-12 col-sm-8 d-flex")
+
+
         
     script(src="/public/assets/jquery/jquery.min.js")
     script(src="/public/assets/bootstrap/js/bootstrap.min.js")
