@@ -27,13 +27,14 @@
 }
 .header-base img {
   padding: 0.5rem 0rem 0rem;
+  width: 10rem;
 }
 
 .bg-images{
   min-height: 65vh;
   max-height: 75vh;
   z-index: 1;
-  background: url(/public/images/backgrounds/coming-soon-bg.jpg);
+  background: url(/public/images/backgrounds/header.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -44,8 +45,8 @@
 .app .main{
   width: 100%;
   height: auto;
-  overflow-y: auto;
-  overflow-x: unset;
+  /* overflow-y: auto;
+  overflow-x: unset; */
   color: #000000;
 }
 .main .portfolio h3.titled-1 {
@@ -57,48 +58,137 @@
   padding: 0rem 22%;
 }
 
-.notice-section{
-  width: 48%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-img.logo-notice {
-  height: 9vh;
-}
-.img-wrapper {
-  width: 100%;
-  margin: 1rem;
-}
-.notice-title h2 {
-  color: #f59e17;
-  text-align: center;
-  font-weight: 700;
-  letter-spacing: 2px;
-  font-size: 32px;
-  margin-bottom: 2rem;
-}
-.notice-title>h4 {
-  color: #fff;
-  text-align: center;
-  font-size: 16px;
-}
-.timer {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  flex-direction: row;
-  margin: 2rem 0rem;
+.features .nav-pills .nav-item button.nav-link, 
+.features .nav-pills .nav-item button.nav-link:active, .features .nav-pills .nav-item button.nav-link.active, 
+.features .nav-pills .nav-item button.nav-link:hover, .features .nav-pills .nav-item button.nav-link:focus{
+  border: #f59e17;
+  margin: 0.7rem 0.5rem;
+  padding: 1vh 2.1rem;
+  border-radius: 0em;
   color: #ffffff;
-  text-align: center;
+  background: #f59e17;
+  cursor: pointer;
 }
-.timer>div {
-  padding: 0.5rem;
-  border: #a2a2a2 solid 1px;
-  margin: 0rem 1rem;
-  width: 86px;
+
+.features .nav-pills .nav-item button.nav-link:active, .features .nav-pills .nav-item button.nav-link.active, 
+.features .nav-pills .nav-item button.nav-link:hover, .features .nav-pills .nav-item button.nav-link:focus{
+  background: #000000 !important;
 }
+
+.features .tab-content{
+  padding: 2rem 4rem;
+}
+
+.tab-pane .portfolio-list .portfolio-box .portfolio-detail img{
+  width: 100%;
+}
+
+.portfolio-detail {
+	width: 100%;
+  padding: 1rem;
+}
+
+.tab-pane .portfolio-list .portfolio-box .portfolio-detail img{
+  width: 100%;
+}
+
+.portfolio-detail,
+.portfolio-detail > i {
+	/* float: left; */
+	overflow: hidden;
+	/* position: relative; */
+}
+.portfolio-detail > i {
+	max-width: 100%;
+}
+.portfolio-detail > i::before {
+	background-color: rgba(57,55,55,0.9);
+	border-radius: 100%;
+	bottom: 0;
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	opacity: 0;
+	transform: scale(0) rotate(720deg);
+	-webkit-transform: scale(0) rotate(720deg);
+	-moz-transform: scale(0) rotate(720deg);
+	-ms-transform: scale(0) rotate(720deg);
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s
+}
+.portfolio-detail:hover > i::before {
+	border-radius: 0;
+	opacity: 1;
+	transform: scale(1) rotate(0deg);
+	-webkit-transform: scale(1) rotate(0deg);
+	-moz-transform: scale(1) rotate(0deg);
+	-ms-transform: scale(1) rotate(0deg);
+}
+.portfolio-detail > i::after {
+	border-top: 45px solid #fddd2f; 
+	border-left: 45px solid transparent; 
+	content: "";
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	opacity: 0;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s
+}
+.portfolio-detail:hover > i::after {
+	opacity: 1;
+}
+.portfolio-detail > .portfolio-content {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	transform: translate(0%, -50%);
+	-webkit-transform: translate(0%, -50%);
+	-moz-transform: translate(0%, -50%);
+	-ms-transform: translate(0%, -50%);
+	opacity: 0;
+	text-align: center;
+}
+.portfolio-detail:hover  > .portfolio-content {
+	opacity: 1;
+}
+.portfolio-detail .portfolio-content > a {
+	display: inline-block;
+	color: #fff;
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	z-index: 1;
+	margin: 0 auto;
+	text-transform: capitalize;
+	text-decoration: none;
+	line-height: 1.5;
+	white-space: pre-line;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+.portfolio-detail .portfolio-content > a.zoom {
+	background-color: #fddd2f;
+	color: #000;
+	display: block;
+	font-size: 16px;
+	line-height: 1.875;
+	height: 30px;
+	width: 30px;
+	text-align: center;
+	margin: 15px auto 0;
+}
+
+
+
 @media (max-width: 1024px){
   .notice-section{
       width: 100%;
