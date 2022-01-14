@@ -3,115 +3,21 @@ html(lang='en')
     meta( charset="UTF-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Notion 34
-    include layout/style.pug
-    style(type="text/css").
-      .app{
-        content: "";
-        width: 100%;
-        height: 100vh;
-        /* min-height: 675px; */
-        display: flex;
-        flex-direction: row-reverse;
-        background: url(./public/images/backgrounds/coming-soon-bg.jpg);
-        justify-content: end;
-        padding: 5rem 4rem;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-      .notice-section{
-        width: 48%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-      }
-      img.logo-notice {
-        height: 9vh;
-      }
-      .img-wrapper {
-        width: 100%;
-        margin: 1rem;
-      }
-      .notice-title h2 {
-        color: #f59e17;
-        text-align: center;
-        font-weight: 700;
-        letter-spacing: 2px;
-        font-size: 32px;
-        margin-bottom: 2rem;
-      }
-      .notice-title>h4 {
-        color: #fff;
-        text-align: center;
-        font-size: 16px;
-      }
-      .timer {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        flex-direction: row;
-        margin: 2rem 0rem;
-        color: #ffffff;
-        text-align: center;
-      }
-      .timer>div {
-        padding: 0.5rem;
-        border: #a2a2a2 solid 1px;
-        margin: 0rem 1rem;
-        width: 86px;
-      }
-      @media (max-width: 1024px){
-        .notice-section{
-            width: 100%;
-        }
-        .app{
-            padding: 1rem 0.7rem;
-        }
-      }
+    block title
+      title Notion 34
+    include ../layout/style.pug
+    block page_style
+      <!--page css link and custom css goes here-->
+      style(type="text/css").
+      
   body
     div(class="app")
-      div(class="notice-section")
-        div(class="img-wrapper text-center")
-          img(src="public/images/logos/svg/Notion_white.svg" alt="Notion THIRTYFOUR" class="logo-notice")
-        div(class="notice-title")
-          h2 Something amazing is coming
-          h4 We are almost there! Signup to findout when it's ready
-        div(class="timer")
-          div(class="days")
-            h3 
-            h6(cladss="label") Days
-          div(class="hours")
-            h3 
-            h6(cladss="label") Hours
-          div(class="minutes")
-            h3 
-            h6(cladss="label") Minutes
-          div(class="seconds")
-            h3 
-            h6(cladss="label") Seconds
-    script(src="/public/assets/jquery/jquery.min.js")
-    script(src="/public/assets/bootstrap/js/bootstrap.min.js")
-    script.
-      const launchDate = new Date("March 30, 2022 22:59:59").getTime();
-      const runCountDown = _=> {
-        let now = new Date().getTime();
+      block header
+        include ./header.pug
+      block intro_image
 
-        let distance = launchDate - now;
-
-        let days = Math.floor(distance / (1000 * 60 * 60 * 24)), 
-          hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        $(".timer .days h3").html(days);
-        $(".timer .hours h3").html(hours); 
-        $(".timer .minutes h3").html(minutes); 
-        $(".timer .seconds h3").html(seconds); 
-
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("demo").innerHTML = "EXPIRED";
-        }
-      }
-      let countDownInterval = setInterval(runCountDown, 1000);
+      block main
+        div(class="main")
+    include ../layout/script.pug
+    block page_script
+      script(src="/js/js.js")
