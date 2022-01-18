@@ -41,7 +41,10 @@
   height: auto;
   content: "";
 }
-
+.btn-gold{
+  background: #f59e17;
+  color: #000000;
+}
 
 @media (max-width: 1024px){
   .notice-section{
