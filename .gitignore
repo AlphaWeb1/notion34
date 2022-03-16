@@ -2,6 +2,7 @@
 README.md
 /files/
 /public/template/images/
+/public/fonts/
 package.json
 package-lock.json
 amplify.yml

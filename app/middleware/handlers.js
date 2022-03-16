@@ -1,6 +1,7 @@
 const express = require('express');
 const errors = express.Router(),
-{response} = require('../services');
+{response} = require('../services'),
+requestType = require('./request.type');
 
 // 500 error
 const error500 = ( err, req, res, next) => {
@@ -18,14 +19,14 @@ const error403 = ( req, res, next) => {
     return response.failed(res, 403, `Request Error`, ['Forbidden request'], 'errors/403');
 };
 
-errors.use(error500);
-errors.use(error404);
-errors.use(error403);
+errors.use(requestType.handle, error500);
+errors.use(requestType.handle, error404);
+errors.use(requestType.handle, error403);
 
 exports.errors = errors;
 
 exports.useErrors = (app) => {
-    app.use(error500);
-    app.use(error404);
-    app.use(error403);
+    app.use(requestType.handle, error500);
+    app.use(requestType.handle, error404);
+    app.use(requestType.handle, error403);
 }

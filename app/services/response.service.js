@@ -10,11 +10,11 @@ exports.success = (res, code, message = null, data = {}, template = null) => {
 }
 
 exports.failed = (res, code, error = null, errors = [], template = null) => {
-    console.log('[:] Response Called', res.headers.render);
+    console.log('[:] Response Called', res.headers);
     if (res.headers.render == 'json') {
         return res.status(code).json({code, success: false, error, errors});
     } else {
-        return res.render(template, {error, errors: errors});
+        return res.status(code).render(template, {error, errors: errors});
     }
 }
 
@@ -23,6 +23,6 @@ exports.redirect = (res, message = null, code = 301, success = true, data = {}, 
     if (res.headers.render == 'json') {
         return res.status(code).json({code, success, message, data});
     } else {
-        return res.redirect(url, data);
+        return res.status(code).redirect(url, data);
     }
 }
