@@ -46,11 +46,32 @@
   color: #000000;
 }
 
+.footer{
+  position: fixed;
+  bottom: 0;
+  padding: 1vh 0.5rem;
+  left: 0;
+  right: 0;
+}
+
+.footer .nav-link{
+  font-weight: 500;
+}
+
+.footer .nav-link:hover, .footer .nav-link:focus, .footer .nav-link:active, .footer .nav-link:focus-within{
+  color: #cccccc !important;
+}
+
 @media (max-width: 1024px){
   .notice-section{
       width: 100%;
   }
   .app{
       padding: 1rem 0.7rem;
+  }
+}
+@media (max-width: 768){
+  .justify-content-sm-start{
+    justify-content: flex-start !important;
   }
 }

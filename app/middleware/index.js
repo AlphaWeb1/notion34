@@ -1,5 +1,6 @@
 const Token = require('./token'),
     Authorize =  require('./auth'),
+    RequestType =  require('./request.type'),
     Web =  require('./web'),
     API =  require('./api'),
     Verified =  require('./verified'),
@@ -11,5 +12,6 @@ module.exports = {
     Token,
     Authorize,
     Verified,
+    RequestType,
     ErrorHandler
 }
