@@ -7,3 +7,7 @@ exports.index = (req, res) => {
 exports.home = (req, res) => {
     return response.success(res, 200, `Server say's Ok`, {}, 'guest/home');
 }
+
+exports.about = (req, res) => {
+    return response.success(res, 200, `Server say's Ok`, {}, 'guest/about');
+}
