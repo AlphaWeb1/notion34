@@ -1,0 +1,17 @@
+.main{
+    margin-top: 26vh; 
+}
+
+@media (max-width:768px) {
+    .main{
+        margin-top: 36vh;
+    }
+}
+@media (max-width:541px) {
+    .main{
+        margin-top: 33vh;
+    }
+    .main .jumbotron h1{
+        font-size: 1.6rem;
+    }
+}

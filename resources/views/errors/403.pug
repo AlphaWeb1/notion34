@@ -1,0 +1,18 @@
+extends ../layout/app.pug
+block title
+    title 403 Error
+block page_style
+  link(rel="stylesheet" href="/css/home.css")
+  link(rel="stylesheet" href="/css/error.css")
+block intro_image 
+
+block main
+    div(class="main d-flex flex-column")
+        div(class="container")
+            div(class="jumbotron")
+                h1(class="text-center") 
+                    span(class="text-danger ") 403: 
+                    | Oops! Forbidden Error: Request is forbidden.
+  
+block page_script
+  script(src="/js/about.js")
