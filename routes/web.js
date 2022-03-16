@@ -7,6 +7,7 @@ const express = require('express'),
 /* guest routes*/
 router.get(`/`, middlewares.Web.handle, controller.guest.homeController.index);
 router.get(`/home`, middlewares.Web.handle, controller.guest.homeController.home);
+router.get(`/about`, middlewares.Web.handle, controller.guest.homeController.about);
 
 router.get(`/categories`, middlewares.Web.handle, controller.guest.categoryController.index);
 router.get(`/categories/:category`, middlewares.Web.handle, controller.guest.categoryController.category);

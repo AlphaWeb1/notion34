@@ -1,18 +1,4 @@
-
-(function($){
-    "use strict"
-	/* + Portfolio */
-	function portfolio() {
-
-		if($(".portfolio-masonry-list").length) {
-			var $container = $(".portfolio-masonry-list");
-			$container.isotope({
-				layoutMode: 'masonry',
-				percentPosition: true,				
-				itemSelector: ".portfolio-box"
-			});
-		}
-	}
+$(document).ready(function(){
     /* - Gallery */
     if($(".portfolio-box").length){
         var url;
