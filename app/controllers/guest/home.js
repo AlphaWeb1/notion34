@@ -11,3 +11,11 @@ exports.home = (req, res) => {
 exports.about = (req, res) => {
     return response.success(res, 200, `Server say's Ok`, {}, 'guest/about');
 }
+
+exports.contact = (req, res) => {
+    return response.success(res, 200, `Server say's Ok`, {}, 'guest/contact');
+}
+
+exports.gallery = (req, res) => {
+    return response.success(res, 200, `Server say's Ok`, {}, 'guest/gallery');
+}

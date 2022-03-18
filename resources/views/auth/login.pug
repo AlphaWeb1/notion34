@@ -3,23 +3,25 @@ block page_style
   link(rel="stylesheet" href="/css/auth.css")
 block intro_image 
 block main
-  div(class="row justify-content-center login-section py-5 no-gutters px-4")
-    div(class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-6")
-      form(class="login-form" method="post" action="/login")
-        div(class="form-group")
-          label(for="email" class="form-label") Email/Username
-          input(type="email" name="email" class="form-control" id="email" placeholder="Enter email..." required)
-        div(class="form-group")
-          label(for="password" class="form-label") Password
-          input(type="password" name="password" class="form-control" id="password" placeholder="Enter password..." required)
-        div Error:
-          if error
-            span=error
-              foreach
-        div(class="form-group")
-          button(type="submit" name="submit" class="btn btn-block btn-outline-dark" id="login" value="login")
-            i(class="fa fa-sign-in")
-            span Login
+  div(class="main d-flex flex-column")
+    div(class="container")
+      div(class="row justify-content-center login-section py-5 no-gutters")
+        div(class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-6")
+          form(class="login-form" method="post" action="/login")
+            div(class="form-group")
+              label(for="email" class="form-label") Email/Username
+              input(type="email" name="email" class="form-control" id="email" placeholder="Enter email..." required)
+            div(class="form-group")
+              label(for="password" class="form-label") Password
+              input(type="password" name="password" class="form-control" id="password" placeholder="Enter password..." required)
+            div Error:
+              if error
+                span=error
+                  foreach
+            div(class="form-group")
+              button(type="submit" name="submit" class="btn btn-block btn-outline-dark" id="login" value="login")
+                i(class="fa fa-sign-in")
+                span Login
 
 block page_script
   script(src="/js/auth.js")
