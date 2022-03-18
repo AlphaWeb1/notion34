@@ -4,7 +4,13 @@ exports.getNumber = (length) => {
         let number = '';
         const pool = '0123456789';
         const arrayPool = pool.split('');
-        for ( var i = 0; i < length ; i++ ) {
+        if (length > 1) {
+            for ( var i = 0; i < Math.ceil(length/2) ; i++ ) {
+                number = ((length % 2) == 1 && (length - i) == 1) ?
+                    `${number}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}` :
+                    `${number}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}`;
+            }
+        } else {
             number = `${number}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}`;
         }
         return number;
@@ -19,7 +25,13 @@ exports.getToken = (length) => {
         let number = '';
         const pool = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabdcefghijklmnopqrstuvwxyz';
         const arrayPool = pool.split('');
-        for ( var i = 0; i < length ; i++ ) {
+        if (length > 1) {
+            for ( var i = 0; i < Math.ceil(length/2) ; i++ ) {
+                number = ((length % 2) == 1 && (length - i) == 1) ?
+                    `${number}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}` :
+                    `${number}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}`;
+            }
+        } else {
             number = `${number}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}`;
         }
         return number;
@@ -34,7 +46,13 @@ exports.getTokenStrict = (length) => {
         let number = '';
         const pool = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         const arrayPool = pool.split('');
-        for ( var i = 0; i < length ; i++ ) {
+        if (length > 1) {
+            for ( var i = 0; i < Math.ceil(length/2) ; i++ ) {
+                number = ((length % 2) == 1 && (length - i) == 1) ?
+                    `${number}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}` :
+                    `${number}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}`;
+            }
+        } else {
             number = `${number}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}`;
         }
         return number;
@@ -49,8 +67,10 @@ exports.getTokenSymbolic = (length) => {
         let number = '';
         const pool = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabdcefghijklmnopqrstuvwxyz~!@#$%^&*()_+{}|?=-`<>,.:;\'\"\\/';
         const arrayPool = pool.split('');
-        for ( var i = 0; i < length ; i++ ) {
-            number = `${number}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}`;
+        for ( var i = 0; i < Math.ceil(length/2) ; i++ ) {
+            number = ((length % 2) == 1 && (length - i) == 1) ?
+                `${number}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}` :
+                `${number}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}${arrayPool[Math.floor(Math.random() * arrayPool.length)]}`;
         }
         return number;
     } catch (error) {
