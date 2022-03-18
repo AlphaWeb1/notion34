@@ -58,7 +58,7 @@ exports.authenticate = (req, res) => {
                 })
                 .catch(error => {
                     console.log('[!] Password Match Failed: ', error);
-                    return response.failed(res, 500, `Password Match Failed`, [error.message], 'auth/login');
+                    return response.failed(res, 400, `Password Match Failed`, [error.message], 'auth/login');
                 });
             }  
         }).catch(error => {

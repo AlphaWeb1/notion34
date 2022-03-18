@@ -1,4 +1,21 @@
 .login-form{
     padding: 1rem 2rem;
-    background: #f0dbbb;
+    background: #fffcf7;
+}
+.main{
+    margin-top: 20vh; 
+}
+
+@media (max-width:768px) {
+    .main{
+        margin-top: 30vh;
+    }
+}
+@media (max-width:541px) {
+    .main{
+        margin-top: 18vh;
+    }
+    .main .jumbotron h1{
+        font-size: 1.6rem;
+    }
 }

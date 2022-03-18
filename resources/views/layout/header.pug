@@ -1,21 +1,21 @@
 div(class="header bg-secondary")
   div(class="header-main bg-white p-3")
     nav(class="navbar navbar-expand-lg navbar-light bg-white")
-      div(class="container-fluid justify-content-center justify-content-sm-emd")
+      div(class="container-fluid justify-content-center justify-content-sm-start")
         a(class="navbar-brand d-none" href="#") Notion Thirty Four
         button(class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuDropDown" 
           aria-controls="menuDropDown" aria-expanded="false" aria-label="Toggle navigation")
           span(class="navbar-toggler-icon")
-        div(class="collapse justify-content-center navbar-collapse" id="menuDropDown")
+        div(class="collapse justify-content-center main-menu navbar-collapse" id="menuDropDown")
           ul(class="navbar-nav")
             li(class="nav-item mx-3")
-              a(class="nav-link active" aria-current="page" href="/home") Home
+              a(class=`nav-link ${ ['/home', '/', '/admin', '/login'].includes(request_url) ? 'active' : ''}` aria-current=`${ ['/home', '/'].includes(request_url) ? 'page' : ''}` href="/home") Home
             li(class="nav-item mx-3")
-              a(class="nav-link" href="/about") About
+              a(class=`nav-link ${ '/about' === request_url ? 'active' : ''}` aria-current=`${ '/about' === request_url  ? 'page' : ''}` href="/about") About
             li(class="nav-item mx-3")
-              a(class="nav-link" href="/gallery") Gallery
+              a(class=`nav-link ${ '/gallery' === request_url ? 'active' : ''}` aria-current=`${ '/gallery' === request_url  ? 'page' : ''}` href="/gallery") Gallery
             li(class="nav-item mx-3")
-              a(class="nav-link" href="/contact") Contact
+              a(class=`nav-link ${ '/contact' === request_url ? 'active' : ''}` aria-current=`${ '/contact' === request_url  ? 'page' : ''}` href="/contact") Contact
             li(class="nav-item dropdown d-none")
               button(class="nav-link dropdown-toggle" id="menuDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false")
                 | Dropdown link
