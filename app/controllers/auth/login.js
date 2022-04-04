@@ -16,6 +16,7 @@ exports.authenticate = (req, res) => {
         return response.failed(res, 400, `Validation Error`, (errors.array().map(error => error.msg)), 'auth/login');
     } else {
         const {email, password} = req.body;
+        console.log('Form Data:', req.body);
         
         User.findOne({ email: email.toLowerCase() })
         .then(userInfo =>{

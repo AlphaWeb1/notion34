@@ -6,22 +6,30 @@ block main
   div(class="main d-flex flex-column")
     div(class="container")
       div(class="row justify-content-center login-section py-5 no-gutters")
-        div(class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-6")
-          form(class="login-form" method="post" action="/login")
+        div(class="col-xs-12 col-sm-10 col-md-8 col-lg-7 col-xl-7")
+          form(class="login-form p-4" method="post" action="/login")
             div(class="form-group")
               label(for="email" class="form-label") Email/Username
-              input(type="email" name="email" class="form-control" id="email" placeholder="Enter email..." required)
+              input(type="email" name="email" class="form-control form-control-lg  rounded-0" id="email" placeholder="Enter email..." required)
             div(class="form-group")
               label(for="password" class="form-label") Password
-              input(type="password" name="password" class="form-control" id="password" placeholder="Enter password..." required)
-            div Error:
-              if error
-                span=error
-                  foreach
+              input(type="password" name="password" class="form-control form-control-lg rounded-0" id="password" placeholder="Enter password..." required)
+            if error
+              div(class="alert text-danger")
+                h4=error
+                button(class="close" data-dismiss="true")
+                if errors
+                  each err in errors
+                    div(class="border rounded border-danger p-2")=err
+                    br
+
             div(class="form-group")
-              button(type="submit" name="submit" class="btn btn-block btn-outline-dark" id="login" value="login")
+              button(type="submit" name="submit" class="btn btn-lg btn-block btn-outline-dark rounded-0" id="login" value="login")
                 i(class="fa fa-sign-in")
                 span Login
 
+            div(class="form-group")
+              span(class="text-info") Forgort password ? 
+              a(class="btn btn-link" href="/forgot-password") Click here... 
 block page_script
   script(src="/js/auth.js")

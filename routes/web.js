@@ -25,4 +25,6 @@ router.post([`/login`, `/admin`], middlewares.Web.handle, validator.auth.login.l
 router.get(`/register`, middlewares.Web.handle, controller.auth.registerController.index);
 router.post(`/register`, middlewares.Web.handle, validator.auth.register.registerBasic, controller.auth.registerController.register);
 
+router.get([`/forgot-password`], middlewares.Web.handle, controller.auth.resetPassword.index);
+
 module.exports = router;

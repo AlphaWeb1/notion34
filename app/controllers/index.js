@@ -8,7 +8,7 @@ module.exports = {
         loginController: require('./auth/login'),
         registerController: require('./auth/register'),
         // OTPController: require('./auth/otp'),
-        // ResetPassword: require('./auth/password-reset'),
+        resetPassword: require('./auth/reset'),
     },
     admin: {
         // clientDashboardController: require('./admin/dashboard'),
